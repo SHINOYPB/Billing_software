@@ -1,0 +1,26 @@
+#######################
+Whole Sale Management 
+######################
+  
+  * Purchase list [sub menu]
+
+	1) we can filter - stock_status wise
+	2)Add a calender for filtering the list -date wise
+	3)
+
+
+  * Order List [sub menu]
+
+	1)Mail should be sent each wholesaler according to product ordered
+
+
+########################
+General Notes
+########################
+
+  * We can add multiple data to single table column which is separated by comma.At the time of fetching the data, we have
+    
+    to use string function to extract the multiple data from the column.
+
+  * Alternatively , instead of saving multiple data to sigle column , we can create another table and add multiple data linked .
+

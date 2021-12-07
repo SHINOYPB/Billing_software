@@ -1,0 +1,62 @@
+.form-control {
+  width: 100%;
+}
+.multiselect-container {
+  box-shadow: 0 3px 12px rgba(0,0,0,.175);
+  margin: 0;
+}
+.multiselect-container .checkbox {
+  margin: 0;
+}
+.multiselect-container li {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+.multiselect-container li a {
+  line-height: 25px;
+  margin: 0;
+  padding:0 35px;
+}
+.custom-btn {
+  width: 100% !important;
+}
+.custom-btn .btn, .custom-multi {
+  text-align: left;
+  width: 100% !important;
+}
+.dropdown-menu > .active > a:hover {
+  color:inherit;
+}
+.dropdown-menu.show {
+    visibility: visible;
+    opacity: 1;
+    top: 100%;
+    overflow-y: scroll;
+    height: 150px;
+}
+.custom-btn button
+{
+	border: ridge;
+    border-top-color: initial;
+    border-top-style: ridge;
+    border-top-width: initial;
+    border-right-color: initial;
+    border-right-style: ridge;
+    border-right-width: initial;
+    border-bottom-color: initial;
+    border-bottom-style: ridge;
+    border-bottom-width: initial;
+    border-left-color: initial;
+    border-left-style: ridge;
+    border-left-width: initial;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+}
+.custom-btn .caret {
+    margin-left: 0;
+    display: none;
+}
