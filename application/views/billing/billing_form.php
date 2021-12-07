@@ -110,13 +110,23 @@
                         <!-- Section for Total text box and create clear button -->
 
                         <div class="form-row">
-                            <div class="col-6  ">
+                            <div class="2">
+
+                            </div>
+                            <div class="col-4  ">
+                                <div class="input-group">
+
+                                    <label for="total">Subtotal without Tax</label>
+                                    <input type="text" class="form-control clearCustom" id="sub_total_without_tax" name="total_amount"> <!-- Billing Amount -->
+
+
+                                </div>
                             </div>
                             <div class="col-4 ">
                                 <div class="input-group">
 
                                     <label for="total">Subtotal With Tax</label>
-                                    <input type="text" class="form-control clearCustom" id="total" name="total_amount"> <!-- Billing Amount -->
+                                    <input type="text" class="form-control clearCustom" id="subtotal_withTax" name="total_amount"> <!-- Billing Amount -->
 
 
                                 </div>
@@ -124,9 +134,9 @@
                             <div class="col-2  ">
 
                                 <div class="input-group">
-
-                                    <label style="padding-top: 8px;padding-right: 22px;">Total</label>
-                                    <input type="text" class="form-control clearCustom" id="total" name="total_amount"> <!-- Billing Amount -->
+                                <!-- style="padding-top: 8px;padding-right: 22px;" -->
+                                    <label >Total</label>
+                                    <input type="text" class="form-control clearCustom" id="final_total" name="total_amount"> <!-- Billing Amount -->
 
                                     <input type="hidden" class="form-control clearCustom" id="totalAmt" name="total"> <!-- Total Amount [without discount] with tax -->
                                     <input type="hidden" class="form-control clearCustom" id="totalDiscount" name="totalDiscount"> <!-- Total Discount  -->
@@ -166,7 +176,7 @@
 <script type="text/javascript">
     $('#sel_gender').on('change', function() { // Clear assigned table contents with clear button click
 
-        alert('hai');
+        // alert('hai');
     });
 
     $('#qty').on('change', function() // Clear assigned table contents with clear button click
@@ -175,8 +185,16 @@
             price = $("#price").val();
             qty = $("#qty").val();
             amount = price * qty;
-            $('#total').val(amount);
-            //alert(amount);
+            orgTax = (amount * tax) / 100;
+            alert('tax=' + orgTax);
+            subtotal = amount + orgTax;
+            $('#total').val(subtotal);
+
+            $('#subtotal_withTax').val(subtotal);
+            $('#sub_total_without_tax').val(amount);
+
+            $('#final_total').val(subtotal);
+          
         });
 </script>
 
@@ -216,17 +234,20 @@
 
 
             html += '<td>';
-            html += '<input type="text" class="form-control autocomplete_txt" placeholder="Qty" data-field-name="name" name="materialname" id="materialname_' + rowcount + '">';
-            html += '</td>';
-
-
-            html += '<td>';
             html += '<input class="form-control autocomplete_txt" placeholder="Price" data-field-name="category" name="category"  id="category_' + rowcount + '">';
+
             html += '</td>';
 
 
             html += '<td>';
-            html += ' <select id="sel_gender" class="form-control fieldClear clearFields"><option value="">Select Tax</option><option value="0">0%</option><option value="1">1%</option><option value="5">5%</option><option value="10">10 </option> </select>';
+            html += ' <select id="" class="form-control fieldClear clearFields"><option value="">Select Tax</option><option value="0">0%</option><option value="1">1%</option><option value="5">5%</option><option value="10">10 </option> </select>';
+
+            html += '</td>';
+
+
+            html += '<td>';
+            html += '<input type="text" class="form-control autocomplete_txt" placeholder="Qty" data-field-name="name" name="materialname" id="materialname_' + rowcount + '">';
+
             html += '</td>';
 
 
