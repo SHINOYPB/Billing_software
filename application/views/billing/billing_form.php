@@ -35,10 +35,10 @@
                                         </thead>
                                         <tbody>
                                             <tr id="row_0">
-                                                <td><input type="text" name="name[]" id="name_0" placeholder="Name" class="form-control fieldClear clearFields" /></td>
-                                                <td><input type="text" name="price[]" id="price_0" placeholder="price" class="form-control fieldClear clearFields" /></td>
+                                                <td><input type="text" required name="name[]" id="name_0" placeholder="Name" class="form-control fieldClear clearFields" /></td>
+                                                <td><input type="text" required name="price[]" id="price_0" placeholder="price" class="form-control fieldClear clearFields" /></td>
                                                 <td>
-                                                    <select id='tax_0' name="tax[]" class="form-control fieldClear clearFields">
+                                                    <select id='tax_0' required name="tax[]" class="form-control fieldClear clearFields">
                                                         <option value=''>Select Tax</option>
                                                         <option value='0'>0%</option>
                                                         <option value='1'>1%</option>
@@ -46,7 +46,7 @@
                                                         <option value='10'>10%</option>
                                                     </select>
                                                 </td>
-                                                <td> <input type="text" id="qty_0" class="form-control  clearFields qty" name="qty[]" placeholder="Price"></td>
+                                                <td> <input type="text" required id="qty_0" class="form-control  clearFields qty" name="qty[]" placeholder="Price"></td>
                                                 <td><input type="text" id="total_0" name="total[]" placeholder="Total" class="form-control fieldClear clearFields" /></td>
                                                 <td><button type="button" name="add" id="addmore" class="ms-btn-icon-outline btn-danger">Add</button></td>
                                             </tr>
@@ -123,20 +123,20 @@
             html += '<td>';
             html += '<div class="back_search">';
             html += '<div class="right-icon-control">';
-            html += '<input type="text"   id="name_' + rowcount + '" class="form-control autocomplete_txt" placeholder="Name" data-field-name="name" name="name[]">';
+            html += '<input type="text" required  id="name_' + rowcount + '" class="form-control autocomplete_txt" placeholder="Name" data-field-name="name" name="name[]">';
             html += '<div class="form-icon" style="margin-right: -18px;">';
             html += ' <a href="#" data-toggle="modal" data-target="#kt_datatable_modal_2" data-mat-id="delete_' + rowcount + '" style="float: right   ;">';
             html += '</i>';
             html += '</a>';
             html += '</td>';
             html += '<td>';
-            html += '<input id="price_' + rowcount + '" class="form-control autocomplete_txt" placeholder="Price" data-field-name="price" name="price[]"  >';
+            html += '<input id="price_' + rowcount + '" required class="form-control autocomplete_txt" placeholder="Price" data-field-name="price" name="price[]"  >';
             html += '</td>';
             html += '<td>';
-            html += ' <select id=""  id="tax_' + rowcount + '"  name="tax[]" class="form-control fieldClear clearFields"><option value="">Select Tax</option><option value="0">0%</option><option value="1">1%</option><option value="5">5%</option><option value="10">10 </option> </select>';
+            html += ' <select id=""  id="tax_' + rowcount + '" required name="tax[]" class="form-control fieldClear clearFields"><option value="">Select Tax</option><option value="0">0%</option><option value="1">1%</option><option value="5">5%</option><option value="10">10 </option> </select>';
             html += '</td>';
             html += '<td>';
-            html += '<input type="text"  id="qty_' + rowcount + '"  class="form-control autocomplete_txt qty " placeholder="Qty" data-field-name="name" name="qty[]" >';
+            html += '<input type="text"  id="qty_' + rowcount + '" required  class="form-control autocomplete_txt qty " placeholder="Qty" data-field-name="name" name="qty[]" >';
             html += '</td>';
             html += '<td>';
             html += '<input type="text"  id="total_' + rowcount + '"  class="form-control price" placeholder="Total"  name="total[]" >';
