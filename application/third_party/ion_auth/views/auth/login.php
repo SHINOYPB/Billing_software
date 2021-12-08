@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <title>Sign In | OGO Entertainer</title>
+        <title>Billing Software</title>
         <!-- Favicon-->
         <link rel="icon" href="<?php echo base_url('assets/favicon.ico'); ?>" type="image/x-icon">
 

@@ -31,22 +31,5 @@ class Last_login extends Admin_Controller {
             $this->_render_admin('last_login' . DIRECTORY_SEPARATOR . 'index', $this->data);
         }
     }
-    
-    //     public function export() {
-    //     $postData = $this->input->post();
-    //     $prof_data = $this->professionals_model->fetch_all_array($postData);
-        
-    //     header("Content-type: application/csv");
-    //     header("Content-Disposition: attachment; filename=\"professionals.csv\"");
-    //     header("Pragma: no-cache");
-    //     header("Expires: 0");
-
-    //     $handle = fopen('php://output', 'w');
-    //     fputcsv($handle, ['Name', 'Professional Type', 'Email', 'Scope']);
-    //     foreach ($prof_data as $data) {
-    //         fputcsv($handle, $data);
-    //     }
-    //     fclose($handle);
-    //     exit;
-    // }
+   
 }

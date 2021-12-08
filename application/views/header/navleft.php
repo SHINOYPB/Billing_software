@@ -28,7 +28,7 @@
 
 
      <!--Administrators-->
-     <li class="menu-item">
+     <!-- <li class="menu-item">
        <a href="#" class="has-chevron  <?= $menu_active == 'administrator' ? 'active' : ''; ?>" data-toggle="collapse" data-target="#order-page" aria-expanded="false" aria-controls="order-page">
          <span><i class="flaticons flaticon-user"></i>Administrator</span>
        </a>
@@ -38,7 +38,7 @@
          <li> <a <?= $sub_menu_active == 'group_list' ? 'class="active "' : ''; ?> href="<?php echo base_url('auth/groups');  ?>">Group List</a> </li>
          <li> <a href="<?php echo base_url('auth/create_group');  ?>">Create Group</a> </li>
        </ul>
-     </li>
+     </li> -->
      <!-- /Administrators -->
 
 
@@ -49,11 +49,7 @@
        </a>
        <ul id="Billing" class="collapse <?= $menu_active == 'billing' ? 'show' : ''; ?> " aria-labelledby="Billing" data-parent="#side-nav-accordion">
          <li> <a <?= $sub_menu_active == 'create_billing' ? 'class="active "' : ''; ?> href="<?php echo base_url('Billing/');  ?>">Create</a> </li>
-         <li> <a <?= $sub_menu_active == 'billing_listview' ? 'class="active "' : ''; ?> href="<?php echo base_url('Billing/allBilling');  ?>">List View</a> </li>
-         <li> <a <?= $sub_menu_active == 'billing_listview' ? 'class="active "' : ''; ?> href="<?php echo base_url('Billing/addTax');  ?>">Add Tax</a> </li>
-
-         <li> <a <?= $sub_menu_active == 'billing_listview' ? 'class="active "' : ''; ?> href="<?php echo base_url('Billing/addPacking');  ?>">Add Packing </a> </li>
-         <li> <a <?= $sub_menu_active == 'billing_listview' ? 'class="active "' : ''; ?> href="<?php echo base_url('Billing/addPackingInfo');  ?>">Add Packing Info</a> </li>
+        
        </ul>
      </li>
      <!-- /Billing -->
@@ -61,7 +57,7 @@
 
      <!-- Logout -->
      <li class="menu-item">
-       <a href="#" class="" data-toggle="collapse" data-target="#basic-elements" aria-expanded="false" aria-controls="basic-elements">
+       <a href="<?php echo base_url('auth/logout')?>" class=""  aria-expanded="false" aria-controls="basic-elements">
          <span><i class="fa fa-power-off"></i>log out</span>
        </a>
      </li>

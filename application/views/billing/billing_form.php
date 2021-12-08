@@ -15,11 +15,7 @@
                     <h6>Create Invoice</h6>
                 </div>
                 <div class="ms-panel-body">
-
-
-                    <form target="_blank" action="<?php echo base_url('Billing/test/') ?>" method="POST">
-
-
+                    <form target="_blank" action="<?php echo base_url('Billing/create_bill/') ?>" method="POST">
                         <!-- Section for Product select  -->
 
                         <div class="form-row">
@@ -37,114 +33,49 @@
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
-                                        <tr>
-
-
-                                            <td><input type="text" id="name" placeholder="Name" class="form-control fieldClear clearFields" /></td>
-                                            <td><input type="text" id="price" placeholder="price" class="form-control fieldClear clearFields" /></td>
-                                            <td>
-                                                <select id='sel_gender' class="form-control fieldClear clearFields">
-                                                    <option value=''>Select Tax</option>
-                                                    <option value='0'>0%</option>
-                                                    <option value='1'>1%</option>
-                                                    <option value='5'>5%</option>
-                                                    <option value='10'>10%</option>
-                                                </select>
-                                            </td>
-                                            <td> <input type="text" id="qty" class="form-control  clearFields" name="qty" placeholder="Price"></td>
-
-                                            <td><input type="text" id="total" placeholder="Total" class="form-control fieldClear clearFields" /></td>
-                                            <td><button type="button" name="add" id="addmore" class="ms-btn-icon-outline btn-danger">Add</button></td>
-
-
-                                            <input type="hidden" id="gstAmt" class="form-control fieldClear clearFields" />
-
-
-                                        </tr>
+                                        <tbody>
+                                            <tr id="row_0">
+                                                <td><input type="text" name="name[]" id="name_0" placeholder="Name" class="form-control fieldClear clearFields" /></td>
+                                                <td><input type="text" name="price[]" id="price_0" placeholder="price" class="form-control fieldClear clearFields" /></td>
+                                                <td>
+                                                    <select id='tax_0' name="tax[]" class="form-control fieldClear clearFields">
+                                                        <option value=''>Select Tax</option>
+                                                        <option value='0'>0%</option>
+                                                        <option value='1'>1%</option>
+                                                        <option value='5'>5%</option>
+                                                        <option value='10'>10%</option>
+                                                    </select>
+                                                </td>
+                                                <td> <input type="text" id="qty_0" class="form-control  clearFields qty" name="qty[]" placeholder="Price"></td>
+                                                <td><input type="text" id="total_0" name="total[]" placeholder="Total" class="form-control fieldClear clearFields" /></td>
+                                                <td><button type="button" name="add" id="addmore" class="ms-btn-icon-outline btn-danger">Add</button></td>
+                                            </tr>
+                                        </tbody>
 
                                     </table>
                                     <hr>
                                 </div>
                                 <!-- <input type="submit" class="btn-sm btn-" name="submit" id="submit" value="Submit"> -->
                             </div>
-
-                            <!-- <div class="col-md-12 " style="margin-top: 31px;">
-
-                                <div id="billing_table">
-
-
-                                    <table id="INVOICETABLE" class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col">HSN</th>
-                                                <th scope="col">MFR</th>
-                                                <th scope="col">PRODUCT NAME</th>
-                                                <th scope="col">BATCH.NO</th>
-                                                <th scope="col">EXPIRYDATE</th>
-                                                <th scope="col">QTY</th>
-                                                <th scope="col">MRP</th>
-                                                <th scope="col">TAX %</th>
-                                                <th scope="col">DISCOUNT</th>
-                                                <th scope="col">NET</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="ivoicetable1">
-
-                                        </tbody>
-                                    </table>
-
-                                </div>
-
-
-                            </div> -->
-
                         </div>
-
                         <!-- Section for product select ends here -->
-
-
-
-
-
                         <!-- Section for Total text box and create clear button -->
-
                         <div class="form-row">
-                            <div class="2">
+                            <div class="col-2">
 
                             </div>
                             <div class="col-4  ">
-                                <div class="input-group">
 
-                                    <label for="total">Subtotal without Tax</label>
-                                    <input type="text" class="form-control clearCustom" id="sub_total_without_tax" name="total_amount"> <!-- Billing Amount -->
-
-
-                                </div>
                             </div>
                             <div class="col-4 ">
-                                <div class="input-group">
 
-                                    <label for="total">Subtotal With Tax</label>
-                                    <input type="text" class="form-control clearCustom" id="subtotal_withTax" name="total_amount"> <!-- Billing Amount -->
-
-
-                                </div>
                             </div>
                             <div class="col-2  ">
 
                                 <div class="input-group">
-                                <!-- style="padding-top: 8px;padding-right: 22px;" -->
-                                    <label >Total</label>
-                                    <input type="text" class="form-control clearCustom" id="final_total" name="total_amount"> <!-- Billing Amount -->
-
-                                    <input type="hidden" class="form-control clearCustom" id="totalAmt" name="total"> <!-- Total Amount [without discount] with tax -->
-                                    <input type="hidden" class="form-control clearCustom" id="totalDiscount" name="totalDiscount"> <!-- Total Discount  -->
-                                    <input type="hidden" id="TotalGSt" name="totalGst" class="form-control fieldClear clearCustom" /> <!-- Total Gst   -->
-                                    <input type="hidden" id="TotalAmount" class="form-control  clearCustom" /> <!-- Total Amount of single product -->
-                                    <input type="hidden" class="form-control clearCustom" id="taxableAmount1" name="taxableAmount1"> <!-- Taxable Amount of single product  -->
-
-
+                                    <!--  -->
+                                    <label style="padding-top: 8px;padding-right: 22px;"> Total </label>
+                                    <input type="text" class="form-control clearCustom" id="final_total" name="total_amount"> 
                                 </div>
 
                             </div>
@@ -152,138 +83,93 @@
 
                                 <button type="submit" class=" btn btn-success btn-sm" style=" float: right; ">Create</button>
                                 <button class=" btn btn-warning btn-sm" id="clear" onclick="refreshPage()" style=" float: right; ">Clear</button>
-
                             </div>
-
                         </div>
-
-                        <!-- Section ends here - Total text box and create clear button -->
-
-
-
-
+                        
                     </form>
-
-
-
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Usless in this context -->
-<script type="text/javascript">
-    $('#sel_gender').on('change', function() { // Clear assigned table contents with clear button click
-
-        // alert('hai');
-    });
-
-    $('#qty').on('change', function() // Clear assigned table contents with clear button click
-        {
-            tax = $("#sel_gender").val();
-            price = $("#price").val();
-            qty = $("#qty").val();
-            amount = price * qty;
-            orgTax = (amount * tax) / 100;
-            alert('tax=' + orgTax);
-            subtotal = amount + orgTax;
-            $('#total').val(subtotal);
-
-            $('#subtotal_withTax').val(subtotal);
-            $('#sub_total_without_tax').val(amount);
-
-            $('#final_total').val(subtotal);
-          
-        });
-</script>
-
-
 
 <script type="text/javascript">
     $(document).ready(function() {
+        let subtotal = 0;
+        $(".qty").keyup(function() {
+            $("input[name='price[]']").each(function(index) {
+                var qty = $("input[name='qty[]']").eq(index).val();
+                var tax = $("select[name='tax[]']").eq(index).val();
+               id = $(this).attr('id');
+                idArr = id.split("_");
+                rowNo = idArr[idArr.length - 1];
+                var price = $("input[name='price[]']").eq(index).val();
+                var output1 = parseInt(qty) * parseInt(price);
+                var calculatedTax = (output1 * parseInt(tax)) / 100;
+                var toatalamt = calculatedTax + output1;
+                $("input[name='total[]']").eq(index).val(toatalamt);
+                subtotal = parseInt(subtotal) + parseInt(toatalamt);
+                $('#final_total').val(subtotal);
+            });
 
+        });
         var addBttn, rowcount, tableBody, submitBttn, closeBttn;
-
         addBttn = $("#addmore");
-        submitBttn = $("#submit");
-        closeBttn = $("#close");
-        rowcount = $("#autocomplete_table tbody tr").length;
+         rowcount = $("#autocomplete_table tbody tr").length;
         tableBody = $("#autocomplete_table tbody");
-
-
         function formHtml() {
-
             html = '<tr id="row_' + rowcount + '">';
-
-            // html += '<td  scope="row" class="delete_row" id="delete_' + rowcount + '">';
-            // html += '<i class="fa fa-minus-circle" style="font-size: x-large;">';
-            // html += '</i>';
-            // html += '</td>';
-
-
             html += '<td>';
             html += '<div class="back_search">';
             html += '<div class="right-icon-control">';
-            html += '<input type="text" class="form-control autocomplete_txt" placeholder="Name" data-field-name="material_code" name="materialcode" id="materialcode_' + rowcount + '">';
+            html += '<input type="text"   id="name_' + rowcount + '" class="form-control autocomplete_txt" placeholder="Name" data-field-name="name" name="name[]">';
             html += '<div class="form-icon" style="margin-right: -18px;">';
             html += ' <a href="#" data-toggle="modal" data-target="#kt_datatable_modal_2" data-mat-id="delete_' + rowcount + '" style="float: right   ;">';
             html += '</i>';
             html += '</a>';
             html += '</td>';
-
-
             html += '<td>';
-            html += '<input class="form-control autocomplete_txt" placeholder="Price" data-field-name="category" name="category"  id="category_' + rowcount + '">';
-
+            html += '<input id="price_' + rowcount + '" class="form-control autocomplete_txt" placeholder="Price" data-field-name="price" name="price[]"  >';
             html += '</td>';
-
-
             html += '<td>';
-            html += ' <select id="" class="form-control fieldClear clearFields"><option value="">Select Tax</option><option value="0">0%</option><option value="1">1%</option><option value="5">5%</option><option value="10">10 </option> </select>';
-
+            html += ' <select id=""  id="tax_' + rowcount + '"  name="tax[]" class="form-control fieldClear clearFields"><option value="">Select Tax</option><option value="0">0%</option><option value="1">1%</option><option value="5">5%</option><option value="10">10 </option> </select>';
             html += '</td>';
-
-
             html += '<td>';
-            html += '<input type="text" class="form-control autocomplete_txt" placeholder="Qty" data-field-name="name" name="materialname" id="materialname_' + rowcount + '">';
-
+            html += '<input type="text"  id="qty_' + rowcount + '"  class="form-control autocomplete_txt qty " placeholder="Qty" data-field-name="name" name="qty[]" >';
             html += '</td>';
-
-
             html += '<td>';
-            html += '<input type="text" class="form-control price" placeholder="Total"  name="price" id="price_' + rowcount + '">';
+            html += '<input type="text"  id="total_' + rowcount + '"  class="form-control price" placeholder="Total"  name="total[]" >';
             html += '</td>';
-
-
-            // html += '<td>';
-            // html += '<input type="text" class="form-control measurement"  name="measurement" id="measurement_' + rowcount + '">';
-            // html += '</td>';
-
-
-            // html += '<td>';
-            // html += '<input type="text" class="form-control quantity" name="quantity" id="quantity_' + rowcount + '">';
-            // html += '</td>';
-
-
-            // html += '<td>';
-            // html += '<input type="text" class="form-control time" name="time" id="time_' + rowcount + '">';
-            // html += '</td>';
-
             rowcount++;
-
+            $(document).ready(function() {
+                $(".qty").keyup(function() {
+                    let output1;
+                    var toatalamt = 0;
+                    $("input[name='price[]']").each(function(index) {
+                        var tax = $("select[name='tax[]']").eq(index).val();
+                        var qty = $("input[name='qty[]']").eq(index).val();
+                        id = $(this).attr('id');
+                        idArr = id.split("_");
+                        rowNo = idArr[idArr.length - 1];
+                        var price = $("input[name='price[]']").eq(index).val();
+                        var output1 = parseInt(qty) * parseInt(price);
+                        var calculatedTax = (output1 * parseInt(tax)) / 100;
+                        toatalamt = calculatedTax + output1;
+                        $("input[name='total[]']").eq(index).val(toatalamt);
+                    });
+                    var subtotal2 = parseInt(subtotal) + parseInt(toatalamt);
+                    $('#final_total').val(subtotal2);
+                });
+            });
             return html;
-
         }
-
         function addNewRow() {
             rowcount = $("#autocomplete_table tbody tr").length;
             var html = formHtml();
             tableBody.append(html);
             console.log(html);
         }
-
-
         function registerevents() {
             addBttn.on("click", addNewRow);
             $(document).on('click', '.delete_row', deleteRow);
@@ -291,27 +177,10 @@
             submitBttn.on("click", submitForm);
         }
         registerevents();
-
     });
 </script>
-
-
-
-
-<!-- for time range -->
-<!-- Wickedpicker for time 12hr formate picking jquery library     -->
-
-<script src="<?php echo base_url('assets/js/wickedpicker.min.js') ?>"></script>
-
 <script>
-    $('#invoice_time').wickedpicker();
-
-
-    function refreshPage() {
-
+       function refreshPage() {
         location.reload();
-
     }
-</script>
-
-<!-- for time range end here -->
+</script> -->

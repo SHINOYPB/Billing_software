@@ -150,6 +150,7 @@ class Auth extends Auth_Controller
      */
     public function logout()
     {
+        
 
         $this->data['title'] = "Logout";
 
