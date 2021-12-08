@@ -12,7 +12,7 @@
    <!-- Logo -->
    <div class="logo-sn ms-d-block-lg" style="padding-bottom: 0px;">
      <a class="pl-0 ml-0 text-center" href="<?php echo base_url('Admin/index'); ?>">
-       <img src="<?php echo base_url('assets/admin/assets/img/dashboard/anymedion_logo.png') ?>" alt="logo"> </a>
+       <!-- <img src="<?php echo base_url('assets/admin/assets/img/dashboard/anymedion_logo.png') ?>" alt="logo"> </a> -->
    </div>
 
    <!-- Navigation -->
